@@ -1,0 +1,71 @@
+ <!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Login /sign up form</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='flipkart.jpeg') }}">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <style>
+		.topnav {
+		  overflow: hidden;
+		  background-color: #4BC3BB;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 18px 20px;
+		  text-decoration: none;
+		  font-size: 20px;
+		}
+
+		.topnav a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		.topnav a.active {
+		  color: white;
+		}
+	</style>
+    </head>
+<body>
+<div class="topnav">
+  		<a class="active" href="#home">Pricesion</a>
+</div>
+<div class="price">
+<div class="container">
+    <form class="form" id="linkCreateAccount" action="{{ url_for('signup') }}" method="post">
+    	    <div class="msg" align="center">{{ msg }}</div>
+            <h1 class="form__title">Create Account</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="signupUserName" name="username" autofocus placeholder="username" required="required">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="emailAddress" name="email" autofocus placeholder="email Address" required="required">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="signupPassword" name="password" autofocus placeholder="Password" required="required">
+                <div class="form_input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input " id="signupPassword" name="password2" autofocus placeholder="Confirm Password" required="required">
+                <div class="form_input-error-message"></div>
+            </div>
+            
+            <button class="form__button" type="submit">submit</button>
+            <p class="form__text">
+                <a id="linkCreateAccount" href="{{url_for('login')}}" class="linkLogin">Already have an account?Sign in</a>
+            </p>
+        </form>
+    </div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>
